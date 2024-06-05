@@ -18,6 +18,7 @@ from collections import defaultdict
 from dwave.system import DWaveSampler, FixedEmbeddingComposite
 from minorminer import find_embedding
 import networkx as nx
+import dwave.inspector
 
 import matplotlib
 try:
@@ -62,6 +63,7 @@ response = sampler.sample_qubo(Q,
                                num_reads=num_reads,
                                label='Training - Embedding')
 
+dwave.inspector.show(response)
 print("\nSampleset:")
 print(response)
 

@@ -17,6 +17,7 @@ from collections import defaultdict
 
 from dwave.system import DWaveSampler, EmbeddingComposite
 import networkx as nx
+import dwave.inspector
 
 import matplotlib
 try:
@@ -57,6 +58,7 @@ sampleset = sampler.sample_qubo(Q,
                                label='Training - Embedding',
                                return_embedding=True)
 
+dwave.inspector.show(sampleset)
 print("\nEmbedding found:\n", sampleset.info['embedding_context']['embedding'])
 
 print("\nSampleset:")
